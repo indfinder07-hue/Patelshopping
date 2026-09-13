@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patel Shopping - COD</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .box {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px #ccc;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .cod {
+      padding: 12px;
+      background: #f1f1f1;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    #success {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2>🛍️ Patel Shopping</h2>
+
+  <p><b>Payment Method</b></p>
+
+  <div class="cod">
+    💵 Cash on Delivery (COD)
+    <br>
+    <small>डिलीवरी के समय पैसे दें</small>
+  </div>
+
+  <input type="text" id="name" placeholder="आपका नाम">
+
+  <input type="tel" id="phone" placeholder="मोबाइल नंबर">
+
+  <textarea id="address" rows="4"
+    placeholder="पूरा डिलीवरी पता"></textarea>
+
+  <button onclick="placeOrder()">
+    📦 Place Order - COD
+  </button>
+
+  <p id="success"></p>
+
+</div>
+
+<script>
+function placeOrder() {
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+
+  if (name === "" || phone === "" || address === "") {
+    alert("कृपया सभी जानकारी भरें।");
+    return;
+  }
+
+  document.getElementById("success").innerHTML =
+    "✅ Order Placed Successfully!<br>" +
+    "💵 Payment: Cash on Delivery<br>" +
+    "धन्यवाद! 🛍️";
+
+}
+</script>
+
+</body>
+</html>
